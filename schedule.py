@@ -79,9 +79,11 @@ def write_calendar(
             weekdays += day+","
         weekdays = weekdays[:-1]
 
+
         w.write("BEGIN:VEVENT\r\n"+
-            "DTSTART;TZID=America/New_York:20140910T"+event.start+"\r\n"+
-            "DTEND;TZID=America/New_York:20140910T"+event.end+"\r\n"+
+            "DTSTART;TZID=America/New_York:20140901T"+event.start+"\r\n"+
+            "EXDATE;TZID=America/New_York:20140901T"+event.start+"\r\n"+
+            "DTEND;TZID=America/New_York:20140901T"+event.end+"\r\n"+
             "RRULE:FREQ=WEEKLY;UNTIL=20141218T170000Z;BYDAY="+weekdays+"\r\n"+
             "CREATED:"+current_date+"\r\n"+
             "DESCRIPTION:"+event.description+"\r\n"+
